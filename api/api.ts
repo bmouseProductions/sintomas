@@ -20,10 +20,10 @@ export const enviarEmail = async (formData: { nome: string; sintomas: propsFormD
 
         if (response.status === 200) {
             window.alert("Email enviado com sucesso!");
-          } else {
+        } else {
             window.alert("Falha ao enviar o email. Por favor, tente novamente.");
         }
-          
+
         return response.data;
 
     } catch (error: any) {

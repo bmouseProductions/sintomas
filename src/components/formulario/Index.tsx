@@ -140,8 +140,8 @@ export const Formulario = () => {
     try {
       await enviarEmail(formDataToSend);
     } catch (error) {
-      console.error("Algo deu errado", error); 
-    } finally{
+      console.error("Algo deu errado", error);
+    } finally {
       setIsLoading(false);
     }
   };
@@ -191,12 +191,12 @@ export const Formulario = () => {
 
             <div className="mt-5 flex flex-wrap justify-center gap-5">
               {symptomFields.map((symptom, index) => (
-                <div className="w-full md:w-[280px] flex flex-col items-center border-2 bg-[#00000070] " key={symptom}>
+                <div
+                  className="w-full md:w-[280px] flex flex-col items-center border-2 bg-[#00000070] "
+                  key={symptom}
+                >
                   <div className="p-2 w-full flex justify-start border-b-2 bg-white text-sky-500 font-bold">
-                    <label
-                      className=""
-                      htmlFor={`${symptom}_${idSuffix}`}
-                    >
+                    <label className="" htmlFor={`${symptom}_${idSuffix}`}>
                       {symptomLabels[index]}:
                     </label>
                     <input
@@ -219,7 +219,6 @@ export const Formulario = () => {
                       >
                         Recorrência:
                       </label>
-
                     </div>
 
                     {Object.keys(recurrenceOptions).map((recurrenceOption) => (
@@ -228,7 +227,7 @@ export const Formulario = () => {
                         className="flex items-center pl-1 "
                       >
                         <input
-                        className="text-[16px]"
+                          className="text-[16px]"
                           type="radio"
                           id={`recorrencia_${symptom}_${recurrenceOption}_${idSuffix}`}
                           name={`recorrencia_${dayIndex}_${symptom}`} // Use dayIndex and symptom in the name attribute
@@ -311,7 +310,11 @@ export const Formulario = () => {
       <Button
         type="submit"
         variant="contained"
-        className={isLoading ? 'bg-slate-400' : 'bg-[#e70000] hover:bg-[#f6a824] shadow-[0px_0px_20px_#e7004c] hover:shadow-[0px_0px_20px_#f6a824] transition-all duration-200 '} 
+        className={
+          isLoading
+            ? "bg-slate-400"
+            : "bg-[#e70000] hover:bg-[#f6a824] shadow-[0px_0px_20px_#e7004c] hover:shadow-[0px_0px_20px_#f6a824] transition-all duration-200 "
+        }
         endIcon={<SendIcon />}
         disabled={isLoading}
       >
